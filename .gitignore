@@ -1,2 +1,9 @@
 .idea/
 algorithm.iml
+/bin/
+
+.settings/
+.classpath
+.project
+
+
