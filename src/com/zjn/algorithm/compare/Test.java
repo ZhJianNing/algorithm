@@ -2,6 +2,7 @@ package com.zjn.algorithm.compare;
 
 import java.util.Random;
 
+import com.zjn.algorithm.InsertSort;
 import com.zjn.algorithm.MaopaoSort;
 import com.zjn.algorithm.QuickSort;
 import com.zjn.algorithm.SelectSort;
@@ -40,6 +41,12 @@ public class Test {
         long start4 = CommenUtil.getCurTime();
         SelectSort.sort(select);
         CommenUtil.inputCostTime("选择",start4);
+       // CommenUtil.display(quick);
+        
+        int[] insert = data.clone();
+        long start5 = CommenUtil.getCurTime();
+        InsertSort.sort(insert);
+        CommenUtil.inputCostTime("插入",start5);
        // CommenUtil.display(quick);
 
 
