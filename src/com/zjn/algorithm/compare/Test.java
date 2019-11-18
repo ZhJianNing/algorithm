@@ -1,10 +1,11 @@
 package com.zjn.algorithm.compare;
 
+import java.util.Random;
+
 import com.zjn.algorithm.MaopaoSort;
 import com.zjn.algorithm.QuickSort;
+import com.zjn.algorithm.SelectSort;
 import com.zjn.algorithm.util.CommenUtil;
-
-import java.util.Random;
 
 /**
  * Test
@@ -14,7 +15,7 @@ import java.util.Random;
  **/
 public class Test {
     public static void main(String[] args) {
-        int data[] = generateArray(100000);
+        int data[] = generateArray(10000);
        // CommenUtil.display(data);
         //冒泡排序
         int[] maopao1 = data.clone();
@@ -33,6 +34,12 @@ public class Test {
         long start3 = CommenUtil.getCurTime();
         QuickSort.sort(quick,0,quick.length-1);
         CommenUtil.inputCostTime("快速",start3);
+       // CommenUtil.display(quick);
+        
+        int[] select = data.clone();
+        long start4 = CommenUtil.getCurTime();
+        SelectSort.sort(select);
+        CommenUtil.inputCostTime("选择",start4);
        // CommenUtil.display(quick);
 
 
