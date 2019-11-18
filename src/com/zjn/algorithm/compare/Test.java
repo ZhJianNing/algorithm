@@ -14,7 +14,7 @@ import java.util.Random;
  **/
 public class Test {
     public static void main(String[] args) {
-        int data[] = generateArray(1000000);
+        int data[] = generateArray(100000);
        // CommenUtil.display(data);
         //冒泡排序
         int[] maopao1 = data.clone();
