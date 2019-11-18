@@ -14,26 +14,26 @@ import java.util.Random;
  **/
 public class Test {
     public static void main(String[] args) {
-        int data[] = generateArray(10000);
-        CommenUtil.display(data);
+        int data[] = generateArray(1000000);
+       // CommenUtil.display(data);
         //冒泡排序
         int[] maopao1 = data.clone();
         long start1 = CommenUtil.getCurTime();
         MaopaoSort.sort(maopao1);
         CommenUtil.inputCostTime("冒泡1",start1);
-        CommenUtil.display(maopao1);
+        //CommenUtil.display(maopao1);
 
         int[] maopao2 = data.clone();
         long start2 = CommenUtil.getCurTime();
         MaopaoSort.sort2(maopao2);
         CommenUtil.inputCostTime("冒泡2",start2);
-        CommenUtil.display(maopao2);
+        //CommenUtil.display(maopao2);
 
         int[] quick = data.clone();
         long start3 = CommenUtil.getCurTime();
-        CommenUtil.inputCostTime("快速",start3);
         QuickSort.sort(quick,0,quick.length-1);
-        CommenUtil.display(quick);
+        CommenUtil.inputCostTime("快速",start3);
+       // CommenUtil.display(quick);
 
 
     }
