@@ -1,5 +1,7 @@
 package com.zjn.algorithm;
 
+import com.zjn.algorithm.util.CommenUtil;
+
 import java.util.Arrays;
 
 /**
@@ -35,50 +37,34 @@ public class MaopaoSort {
     } 
     
     //优化前
-    private static void sort(int[] array) throws Exception{
-    	if(array == null || array.length == 0) {
-    		throw new Exception("数组为null或者为空！！！");
-    	}
-    	System.out.println("优化之前的冒泡排序");
+    public static void sort(int[] array) {
     	int n = array.length;
     	for(int i=0;i<n;i++) {
     		for(int j=0;j<n-i-1;j++) {
     			if(array[j]>array[j+1]) {
-    				swap(array,j,j+1);
+    				CommenUtil.swap(array,j,j+1);
     			}
     		}
-    		System.out.println("第"+(i+1)+"轮后："+Arrays.toString(array));
+    	//	System.out.println("第"+(i+1)+"轮后："+Arrays.toString(array));
     	}
     }
     
     //优化前
-    private static void sort2(int[] array) throws Exception{
-    	if(array == null || array.length == 0) {
-    		throw new Exception("数组为null或者为空！！！");
-    	}
-    	System.out.println("优化之后的冒泡排序");
+    public static void sort2(int[] array){
     	int n = array.length;
     	for(int i=0;i<n;i++) {
     		//设置一个标识来检测每轮比较是否产生了交换，如果没有交换说明已经排好序了
     		boolean isFinish = true;    		
     		for(int j=0;j<n-i-1;j++) {
     			if(array[j]>array[j+1]) {
-    				swap(array,j,j+1);
+    				CommenUtil.swap(array,j,j+1);
                     isFinish = false;
     			}
     		}
-    		System.out.println("第"+(i+1)+"轮后："+Arrays.toString(array));
+    	//	System.out.println("第"+(i+1)+"轮后："+Arrays.toString(array));
     		if(isFinish) {
     			break;
     		}
     	}
-    }
-    
-    
-    
-    private static void swap(int[] array,int i,int j) {
-    	int temp = array[i];
-    	array[i]=array[j];
-    	array[j]=temp;
     }
 }
