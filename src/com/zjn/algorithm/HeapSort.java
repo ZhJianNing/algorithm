@@ -3,7 +3,8 @@ package com.zjn.algorithm;
 import com.zjn.algorithm.util.CommenUtil;
 
 /**
- * HeapSort   用到了完全二叉树的部分性质
+ * HeapSort   堆排序
+ * 用到了完全二叉树的部分性质
  * 完全二叉树放按层次遍历顺序存放入一个一维数组中：
  * 如果从下标从1开始存储，则编号为i的结点的主要关系为：
  * 双亲：下取整 （i/2）       左孩子：2i           右孩子：2i+1

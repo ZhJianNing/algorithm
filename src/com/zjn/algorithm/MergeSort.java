@@ -5,7 +5,8 @@ import com.zjn.algorithm.util.CommenUtil;
 import java.util.Arrays;
 
 /**
- * MergeSort    和选择排序一样，归并排序的性能不受输入数据的影响，但表现比选
+ * MergeSort    归并排序
+ * 和选择排序一样，归并排序的性能不受输入数据的影响，但表现比选
  * 择排序好的多，因为始终都是O(n log n）的时间复杂度。代价是需要额外的内存空间。
  * <p>
  * 算法描述:

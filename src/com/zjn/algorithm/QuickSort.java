@@ -1,7 +1,9 @@
 package com.zjn.algorithm;
 
+import com.zjn.algorithm.util.CommenUtil;
+
 /**
- * QuickSort
+ * QuickSort    快速排序
  * <p>
  * 快速排序的基本思想：
  * 通过一趟排序将待排记录分隔成独立的两部分，其中一部分记录的关键字均比另一部分
@@ -23,7 +25,7 @@ public class QuickSort {
         long start =System.currentTimeMillis();
         sort(data, 0, data.length - 1);
         System.out.println((System.currentTimeMillis() - start) +"ms");
-        display(data);
+        CommenUtil.display(data);
 
     }
 
@@ -74,13 +76,6 @@ public class QuickSort {
         arrays[low] = pivot;
         //返回基准值下标
         return low;
-    }
-
-    public static void display(int[] data) {
-        for (int i = 0; i < data.length; i++) {
-            System.out.print(data[i]);
-            System.out.print(" ");
-        }
     }
 
 }

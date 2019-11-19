@@ -1,5 +1,12 @@
 package com.zjn.algorithm;
 
+/**
+ * InsertSort 插入排序
+ *
+ * @author       zjn
+ * @date         2019/11/18
+ *
+ **/
 public class InsertSort {
 	public static void main(String[] args) {
 

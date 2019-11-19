@@ -3,11 +3,12 @@ package com.zjn.algorithm;
 import com.zjn.algorithm.util.CommenUtil;
 
 /**
- * 选择排序
- * 
- * @author zjn
+ * SelectSort	选择排序
  *
- */
+ * @author       zjn
+ * @date         2019/11/18
+ *
+ **/
 public class SelectSort {
 	public static void main(String[] args) {
 

@@ -13,7 +13,7 @@ import com.zjn.algorithm.util.CommenUtil;
  **/
 public class Test {
     public static void main(String[] args) {
-        int data[] = generateArray(10000);
+        int data[] = generateArray(20000);
        // CommenUtil.display(data);
         //冒泡排序
         int[] maopao1 = data.clone();
@@ -57,6 +57,13 @@ public class Test {
         int[] mergeResult =  MergeSort.sort(merge);
         CommenUtil.inputCostTime("归并", start7);
         CommenUtil.display(mergeResult);
+
+
+        int[] shell = data.clone();
+        long start8 = CommenUtil.getCurTime();
+        ShellSort.sort(shell);
+        CommenUtil.inputCostTime("希尔", start8);
+        CommenUtil.display(shell);
 
 
     }
