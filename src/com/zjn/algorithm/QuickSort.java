@@ -28,6 +28,7 @@ public class QuickSort {
     }
 
     public static void sort(int[] arrays, int low, int high) {
+        //设置递归临界条件
         if (low < high) {
             //划分数组，活动划分下标
             int pivotkey = partition(arrays, low, high);

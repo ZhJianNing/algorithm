@@ -20,10 +20,14 @@ public class HeapSort {
     private static int len;
 
     public static void main(String[] args) {
-
+        int[] data = {2, 9, 3, 0, 5, 8};
+        sort(data);
+        CommenUtil.display(data);
     }
 
     public static void sort(int arrays[]) {
+        //设置全局变量
+        len = arrays.length;
         //构建一个最大堆
         buildMaxHeap(arrays);
 
