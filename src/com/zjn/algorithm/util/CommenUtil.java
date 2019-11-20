@@ -1,5 +1,7 @@
 package com.zjn.algorithm.util;
 
+import java.util.Random;
+
 /**
  * CommenUtil
  *
@@ -40,5 +42,30 @@ public class CommenUtil {
 
     public static void inputCostTime(String type,long start){
         System.out.println(type+"排序算法耗时："+ (System.currentTimeMillis()-start)+"ms");
+    }
+    
+    /**
+     * 生成测试数组
+     *
+     * @param
+     * @return :
+     * @author : zjn
+     * @date : 2019/11/18
+     */
+    public static int[] generateArray(int sum) {
+        int[] array = new int[sum];
+        //生成数组
+        for (int i = 0; i < sum - 1; i++) {
+            array[i] = i + 1;
+        }
+        //随机打乱
+        for (int i = 0; i < sum - 1; i++) {
+            int r = i + new Random().nextInt(sum - 1 - i);     // between i and N-1
+            Integer temp = array[i];
+            array[i] = array[r];
+            array[r] = temp;
+        }
+
+        return array;
     }
 }

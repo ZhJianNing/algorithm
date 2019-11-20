@@ -13,7 +13,7 @@ import com.zjn.algorithm.util.CommenUtil;
  **/
 public class Test {
     public static void main(String[] args) {
-        int data[] = generateArray(20000);
+        int data[] = CommenUtil.generateArray(4000);
        // CommenUtil.display(data);
         //冒泡排序
         int[] maopao1 = data.clone();
@@ -64,32 +64,13 @@ public class Test {
         ShellSort.sort(shell);
         CommenUtil.inputCostTime("希尔", start8);
         CommenUtil.display(shell);
+        
+        int[] counting = data.clone();
+        long start9 = CommenUtil.getCurTime();
+        CountingSort.sort(counting);
+        CommenUtil.inputCostTime("计数", start9);
+        CommenUtil.display(counting);
 
 
-    }
-
-    /**
-     * 生成测试数组
-     *
-     * @param
-     * @return :
-     * @author : zjn
-     * @date : 2019/11/18
-     */
-    public static int[] generateArray(int sum) {
-        int[] array = new int[sum];
-        //生成数组
-        for (int i = 0; i < sum - 1; i++) {
-            array[i] = i + 1;
-        }
-        //随机打乱
-        for (int i = 0; i < sum - 1; i++) {
-            int r = i + new Random().nextInt(sum - 1 - i);     // between i and N-1
-            Integer temp = array[i];
-            array[i] = array[r];
-            array[r] = temp;
-        }
-
-        return array;
     }
 }
