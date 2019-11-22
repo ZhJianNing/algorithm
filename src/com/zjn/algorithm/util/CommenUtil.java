@@ -1,6 +1,9 @@
 package com.zjn.algorithm.util;
 
+import java.util.Arrays;
+import java.util.List;
 import java.util.Random;
+import java.util.stream.Collectors;
 
 /**
  * CommenUtil
@@ -19,6 +22,20 @@ public class CommenUtil {
     public static void display(int[] data) {
         for (int i = 0; i < data.length; i++) {
             System.out.print(data[i]);
+            System.out.print(" ");
+        }
+        System.out.println(" ");
+    }
+
+    /** 打印list集合
+     * @param null
+     * @return :
+     * @author : zjn
+     * @date : 2019/11/22
+     */
+    public static void displayList(List<Integer> data) {
+        for (int i = 0; i < data.size(); i++) {
+            System.out.print(data.get(i));
             System.out.print(" ");
         }
         System.out.println(" ");
@@ -67,5 +84,15 @@ public class CommenUtil {
         }
 
         return array;
+    }
+
+    /** int数组转list
+     * @param :data
+     * @return :
+     * @author : zjn
+     * @date : 2019/11/22
+     */
+    public static List<Integer> intArrayToList(int[] data){
+        return Arrays.stream(data).boxed().collect(Collectors.toList());
     }
 }

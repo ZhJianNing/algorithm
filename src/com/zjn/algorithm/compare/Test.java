@@ -1,5 +1,6 @@
 package com.zjn.algorithm.compare;
 
+import java.util.List;
 import java.util.Random;
 
 import com.zjn.algorithm.*;
@@ -13,7 +14,7 @@ import com.zjn.algorithm.util.CommenUtil;
  **/
 public class Test {
     public static void main(String[] args) {
-        int data[] = CommenUtil.generateArray(4000);
+        int data[] = CommenUtil.generateArray(10000);
        // CommenUtil.display(data);
         //冒泡排序
         int[] maopao1 = data.clone();
@@ -70,6 +71,14 @@ public class Test {
         CountingSort.sort(counting);
         CommenUtil.inputCostTime("计数", start9);
         CommenUtil.display(counting);
+
+        int[] bucket = data.clone();
+        List<Integer>  bucket2 = CommenUtil.intArrayToList(data);
+        long start10 = CommenUtil.getCurTime();
+        //需要调整桶的大小
+        List<Integer> result = BucketSort.sort(bucket2,5);
+        CommenUtil.inputCostTime("桶", start10);
+        CommenUtil.displayList(result);
 
 
     }
