@@ -156,7 +156,7 @@ public class CommenUtil {
     }
 
     /**
-     * 得到比a大的最接近2的指数的数
+     * 得到比a大的（或者等于）最接近2的指数的数
      * >>：带符号右移。正数右移高位补0，负数右移高位补1。比如：4 >> 1，结果是2；-4 >> 1，结果是-2。-2 >> 1，结果是-1
      *
      * >>>：无符号右移。无论是正数还是负数，高位通通补0
@@ -170,7 +170,7 @@ public class CommenUtil {
      * @date : 2019/11/25
      */
     public static int getNum2(int a) {
-        System.out.println("a的值:" + a);
+        System.out.println("a的值:" + a+"二进制:"+CommenUtil.intToBinary(a));
         int n = a - 1;
         System.out.println("执行：int n = a - 1; n的值：" + n + "；二进制：" + CommenUtil.intToBinary(n));
         //n |= n >>> 1;

@@ -10,6 +10,6 @@ import com.zjn.algorithm.util.CommenUtil;
  **/
 public class BinaryTest {
     public static void main(String[] args) {
-        System.out.println(CommenUtil.getNum2(12));
+        System.out.println(CommenUtil.getNum2(134217729));
     }
 }
