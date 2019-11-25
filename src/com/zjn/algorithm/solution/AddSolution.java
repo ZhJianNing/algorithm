@@ -1,5 +1,7 @@
 package com.zjn.algorithm.solution;
 
+import com.zjn.algorithm.util.CommenUtil;
+
 import java.util.HashMap;
 import java.util.Map;
 
@@ -14,10 +16,11 @@ import java.util.Map;
 public class AddSolution {
     public static void main(String[] args) {
         //测试求和
-        int[] data = {-3, -6, 3, 2, 4};
+       // int[] data = {-3, -6, 3, 2, 4};
+        int[] data = {-5,2043,2};
         int[] result1 = twoSum1(data, -3);
         int[] result2 = twoSum2(data, -3);
-        int[] result3 = twoSum3(data, -3);
+        int[] result3 = twoSum3_1(data, -3);
         System.out.println(result1[0] + "," + result1[1]);
         System.out.println(result2[0] + "," + result2[1]);
         System.out.println(result3[0] + "," + result3[1]);
@@ -75,6 +78,8 @@ public class AddSolution {
 
     /**
      * 用数据字典、与运算求和（待研究）
+     * 该方法有局限性：int[] data = {-5,2043,2};求和-3  得出结果为[1,2]
+     * 方法中的max取值应该斟酌（应该根据数组最大值和最小值的绝对值）
      *
      * @param null
      * @return :
@@ -84,6 +89,31 @@ public class AddSolution {
     public static int[] twoSum3(int[] nums, int target) {
         int max = 2047;
         int[] map = new int[2048];
+        for (int i = 0; i < nums.length; i++) {
+            int dif = map[(target - nums[i]) & max];
+            if (dif != 0) {
+                return new int[]{dif - 1, i};
+            }
+            map[(nums[i]) & max] = i + 1;
+        }
+        return null;
+    }
+
+
+    public static int[] twoSum3_1(int[] nums, int target) {
+        //找合适的max值
+        int max = 2047;
+        int maxnunm = nums[0],minnum=nums[0];
+        for(int i = 0;i<nums.length;i++){
+            if(nums[i]>maxnunm)
+                maxnunm = nums[i];
+            if(nums[i]<minnum)
+                minnum = nums[i];
+        }
+        max = Math.max(max,(maxnunm-minnum));
+        max = CommenUtil.getNum2(max);
+
+        int[] map = new int[max+1];
         for (int i = 0; i < nums.length; i++) {
             int dif = map[(target - nums[i]) & max];
             if (dif != 0) {
