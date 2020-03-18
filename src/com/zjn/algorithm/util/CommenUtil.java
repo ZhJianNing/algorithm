@@ -175,17 +175,17 @@ public class CommenUtil {
         System.out.println("执行：int n = a - 1; n的值：" + n + "；二进制：" + CommenUtil.intToBinary(n));
         //n |= n >>> 1;
         int temp = n >>> 1;
-        System.out.println("执行：n >>> 1; n的值：" + n + "；二进制：" + CommenUtil.intToBinary(temp));
+        System.out.println("执行：n >>> 1;       n的值：" + n + "；二进制：" + CommenUtil.intToBinary(temp));
         n = n | temp;
-        System.out.println("执行：n |= n >>> 1; n的值：" + n + "；二进制：" + CommenUtil.intToBinary(n));
+        System.out.println("执行：n |= n >>> 1;  n的值：" + n + "；二进制：" + CommenUtil.intToBinary(n));
         n |= n >>> 2;
-        System.out.println("执行：n |= n >>> 2; n的值：" + n + "；二进制：" + CommenUtil.intToBinary(n));
+        System.out.println("执行：n |= n >>> 2;  n的值：" + n + "；二进制：" + CommenUtil.intToBinary(n));
         n |= n >>> 4;
-        System.out.println("执行：n |= n >>> 4; n的值：" + n + "二进制：" + CommenUtil.intToBinary(n));
+        System.out.println("执行：n |= n >>> 4;  n的值：" + n + "；二进制：" + CommenUtil.intToBinary(n));
         n |= n >>> 8;
-        System.out.println("执行：n |= n >>> 8; n的值：" + n + "；二进制：" + CommenUtil.intToBinary(n));
+        System.out.println("执行：n |= n >>> 8;  n的值：" + n + "；二进制：" + CommenUtil.intToBinary(n));
         n |= n >>> 16;
-        System.out.println("执行：n |= n >>> 16; n的值：" + n + "二进制：" + CommenUtil.intToBinary(n));
+        System.out.println("执行：n |= n >>> 16; n的值：" + n + "；二进制：" + CommenUtil.intToBinary(n));
         return n + 1;
     }
 }
