@@ -1,4 +1,4 @@
-package com.zjn.algorithm;
+package com.zjn.algorithm.paixu;
 
 import com.zjn.algorithm.util.CommenUtil;
 

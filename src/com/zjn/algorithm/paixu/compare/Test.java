@@ -1,6 +1,6 @@
-package com.zjn.algorithm.compare;
+package com.zjn.algorithm.paixu.compare;
 
-import com.zjn.algorithm.*;
+import com.zjn.algorithm.paixu.*;
 import com.zjn.algorithm.util.CommenUtil;
 
 import java.util.List;

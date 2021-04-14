@@ -1,4 +1,4 @@
-package com.zjn.algorithm;
+package com.zjn.algorithm.paixu;
 
 import java.util.ArrayList;
 
