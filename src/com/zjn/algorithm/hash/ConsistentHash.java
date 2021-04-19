@@ -33,6 +33,7 @@ public class ConsistentHash<T> {
      * @param node T
      */
     public void add(T node) {
+        //todo 发现进行虚拟节点（key）和真实节点（value）映射时，如果有key的hash冲突会把之前的key（即虚拟节点）覆盖掉，这种情况是放任，还是需要特别处理
         for (int i = 0; i < this.numberOfReplicas; i++) {
             circle.put(this.iHashService.hash(node.toString() + i), node);
         }
