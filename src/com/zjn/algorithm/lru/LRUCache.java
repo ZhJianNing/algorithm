@@ -86,9 +86,11 @@ public class LRUCache<V> {
             if (table.size() == capacity) {
                 //todo 这里和原作者有出入，需要后期验证
                 //如果超了就删掉尾部节点
-                tail.prev.prev.next = tail;//tail的上上个节点的next指向tail
-                tail.prev = tail.prev.prev;//tail的prev指向tail的上上个节点
-                table.remove(tail.prev.key);//最后删除tail的上一个节点
+                table.remove(tail.prev.key);//最后删除tail的上一个节点，这里remove只是把hashmap中对这个node的引用删掉，
+                // 可是这个node还是被其他node（双向链表）引用，所以这个对象并不是null，只是少了一个引用
+                tail.prev.prev.next = tail;//tail的上上个节点的next指向tail，这里又删掉一个引用
+                tail.prev = tail.prev.prev;//tail的prev指向tail的上上个节点，这里又删掉一个引用
+                //即一个node被它的 前/后/hash表 三个引用，要删掉无用对象，需要把这个三个引用删掉或指向别的对象
             }
             //添加新节点
             node = new TwoNode<>();
