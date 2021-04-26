@@ -12,7 +12,7 @@ import java.util.Stack;
  **/
 public class Yushui {
     public static void main(String[] args) {
-        int[] height = {4, 2, 0, 3, 2};
+        int[] height = {0, 1, 0, 2, 1, 0, 1, 3, 2, 1, 2, 1};
         System.out.println(trap4(height));
     }
 
@@ -128,7 +128,7 @@ public class Yushui {
             while (!stack.isEmpty() && height[stack.peek()] < height[i]) {
                 int leftIndex = stack.pop();
                 //如果栈顶元素一直相等，那么全部pop出去
-                while (!stack.isEmpty() && height[stack.peek()] == height[i]) {
+                while (!stack.isEmpty() && height[stack.peek()] == height[leftIndex]) {
                     stack.pop();
                 }
                 if (!stack.isEmpty()) {
