@@ -6,4 +6,6 @@ algorithm.iml
 .classpath
 .project
 
+out/
+
 
